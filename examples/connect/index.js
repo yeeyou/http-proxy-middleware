@@ -8,8 +8,8 @@ var proxyMiddleware = require('../../index');                      // require('h
 // configure proxy middleware
 // context: '/' will proxy all requests
 //     use: '/api' to proxy request when path starts with '/api'
-var proxy = proxyMiddleware('/api', {
-                target: 'http://www.example.org',
+var proxy = proxyMiddleware('/vi', {//['/api', '/ajax', '/someotherpath'] multi match 可用于auth
+                target: 'https://api.instagram.com',
                 changeOrigin: true   // for vhosted sites, changes host header to match to target's host
             });
 
