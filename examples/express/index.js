@@ -9,7 +9,8 @@ var proxyMiddleware = require('../../index');                      // require('h
 //     use: '/api' to proxy request when path starts with '/api'
 var proxy = proxyMiddleware('/api', {
                 target: 'http://www.example.org',
-                changeOrigin: true   // for vhosted sites, changes host header to match to target's host
+                changeOrigin: true,   // for vhosted sites, changes host header to match to target's host
+                logLevel: 'debug'//
             });
 
 var app = express();
