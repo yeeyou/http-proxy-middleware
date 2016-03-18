@@ -16,9 +16,9 @@ var proxy = proxyMiddleware('/v1', {
 var app = express();
 app.use(proxy);                      // add the proxy to express
 
-app.listen(9001);
+app.listen(6060);
 
-console.log('listening on port 9001');
+console.log('listening on port 6060');
 console.log('try:');
 console.log('  http://localhost:3000/v1');
 
