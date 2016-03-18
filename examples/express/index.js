@@ -7,8 +7,8 @@ var proxyMiddleware = require('../../index');                      // require('h
 // configure proxy middleware
 // context: '/' will proxy all requests
 //     use: '/api' to proxy request when path starts with '/api'
-var proxy = proxyMiddleware('/api', {
-                target: 'http://www.example.org',
+var proxy = proxyMiddleware('/v1', {
+                target: 'https://api.instagram.com',
                 changeOrigin: true,   // for vhosted sites, changes host header to match to target's host
                 logLevel: 'debug'//
             });
@@ -16,9 +16,9 @@ var proxy = proxyMiddleware('/api', {
 var app = express();
 app.use(proxy);                      // add the proxy to express
 
-app.listen(3000);
+app.listen(9001);
 
-console.log('listening on port 3000');
+console.log('listening on port 9001');
 console.log('try:');
-console.log('  http://localhost:3000/api');
+console.log('  http://localhost:3000/v1');
 
