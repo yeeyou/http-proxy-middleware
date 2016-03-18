@@ -17,8 +17,8 @@ var proxy = proxyMiddleware(['/v1','/oauth'], {//['/api', '/ajax', '/someotherpa
 var app = connect();
 app.use(proxy);                      // add the proxy to connect
 
-http.createServer(app).listen(3000);
+http.createServer(app).listen(6060);
 
-console.log('listening on port 3000');
+console.log('listening on port 6060');
 console.log('try:');
 console.log('  http://localhost:3000/api');
